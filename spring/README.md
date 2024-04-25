@@ -1,2 +1,14 @@
-## spring boot 에서 resource에 있는 folder가 package로 보일 때
-- 프로젝트 build path -> configure build path -> source 탭 -> src/main/resources의 excluded edit -> exclusion patterns에 **를 add
+# 🌱 Spring Boot 프로젝트에서 리소스 폴더가 패키지로 표시되는 문제 해결 가이드
+
+## 📂 프로젝트 설정 접근
+3. **프로젝트 설정 열기**: 프로젝트 우클릭 후 'Build Path' -> 'Configure Build Path'를 선택합니다.
+4. **Source 탭 접근**: 열린 설정 창에서 'Source' 탭을 선택합니다.
+
+## 📁 리소스 폴더 설정
+5. **리소스 폴더 위치 확인**: `src/main/resources` 폴더를 찾아 선택합니다.
+6. **Exclusion Pattern 설정**: 'Excluded' 섹션에서 'Edit'를 클릭 후, Exclusion Patterns에 '**'를 추가합니다.
+
+## ✅ 설정 확인 및 적용
+7. **변경 사항 저장**: 설정 변경 후 'OK'를 클릭하여 변경 사항을 저장합니다.
+8. **프로젝트 리프레시**: 프로젝트에 대한 변경 사항을 적용하기 위해 프로젝트를 리프레시 합니다.
+9. **폴더 확인**: 이제 `src/main/resources` 폴더가 올바르게 리소스 폴더로 인식되어 패키지로 보이지 않아야 합니다.
