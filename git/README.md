@@ -10,8 +10,6 @@ Git-Flow는 Vincent Driessen이 제안한 Git 사용을 위한 브랜치 관리 
 - **Release**: 릴리스 전 버그 수정, 문서 작업 등 마무리 작업을 위한 브랜치. 작업 완료 후 Master와 Develop에 병합됩니다.
 - **Hotfix**: 프로덕션 릴리스에서 발생한 버그를 긴급하게 수정하기 위한 브랜치. 수정 후 Master와 Develop에 병합됩니다.
 
-# 🌟 Git-Flow 브랜치 전략: 기능별 브랜치 사용 예시
-
 ## 🔄 Git-Flow 사용 예시
 이 예시에서는 새로운 로그인 기능을 추가하는 과정을 통해 Git-Flow 전략을 적용하는 방법을 설명합니다.
 
