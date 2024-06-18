@@ -36,3 +36,58 @@
 
 ## 🔄 프로젝트 새로고침
 - **프로젝트 새로고침**: 프로젝트를 우클릭하고 'Refresh'를 선택하여 모든 변경 사항을 프로젝트에 적용합니다.
+
+# 🔐 Spring에서 OAuth 2.0 사용하기
+
+## 📖 OAuth 2.0이란?
+OAuth 2.0은 인터넷 사용자가 비밀번호를 공개하지 않고도, 다른 웹 사이트의 자원에 대한 접근 권한을 서드 파티 애플리케이션에 부여할 수 있는 표준 프로토콜입니다. 이를 통해 사용자 대신 외부 시스템이 안전하게 행동할 수 있도록 합니다.
+
+## 🚀 OAuth 2.0의 주요 역할
+- **리소스 소유자(Resource Owner)**: 사용자가 리소스에 대한 접근을 허용하는 주체입니다.
+- **리소스 서버(Resource Server)**: 사용자의 데이터를 호스팅하는 서버입니다.
+- **클라이언트(Client)**: 사용자 대신 리소스 서버에 접근을 요청하는 애플리케이션입니다.
+- **인증 서버(Authorization Server)**: 클라이언트가 사용자를 대신해 리소스에 접근할 수 있도록 토큰을 발급하는 서버입니다.
+
+## 🛠 Spring에서 OAuth 2.0 구현 방법
+### 설정 구성
+`application.yml` 또는 `application.properties`에 클라이언트와 리소스 서버의 세부 정보를 설정합니다.
+
+#### application.yml 예시
+```yaml
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: your-client-id
+            client-secret: your-client-secret
+            scope: email, profile
+        provider:
+          google:
+            authorization-uri: https://accounts.google.com/o/oauth2/auth
+            token-uri: https://oauth2.googleapis.com/token
+            user-info-uri: https://openidconnect.googleapis.com/v1/userinfo
+            user-name-attribute: sub
+```
+
+### SecurityConfig.java 예시
+```java
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+            .authorizeRequests()
+                .antMatchers("/", "/home").permitAll()
+                .anyRequest().authenticated()
+            .and()
+            .oauth2Login();
+    }
+}
+```
+## 📝 OAuth 2.0 사용시 주의사항
+- **보안**: 리다이렉션 URI는 가능한 한 정확하게 설정하고 클라이언트 비밀은 안전하게 보관 필요!
+- **범위 관리**: 요청하는 범위(scope)는 최소한으로 유지하며 필요 이상의 접근 권한을 요청 X
