@@ -35,5 +35,6 @@
   - 🛠️ 마이데이터 활용을 위한 OAuth2.0 환경 구현 미시작🕐
 - **AWS 과제**: 
   - 🔄 CI/CD 파이프라인 구축해보기 미시작🕐
+  - 🔄 AWS Certified Solutions Architect Associate 자격 취득 학습중⏳
 - **Frontend 과제**: 
   - 📱 반응형 웹사이트 디자인 및 구현하기 완료✅
