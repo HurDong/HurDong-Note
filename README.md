@@ -32,11 +32,12 @@
   - 🛠️ Chrome Driver를 활용하여 간단한 정보들 크롤링하기 완료✅
   - 🛠️ LLM 학습을 위한 Fine Turing 학습 및 실습 완료✅
   - 🛠️ WebSocket을 활용한 실시간 양방향 채팅방 구현 완료✅
-  - 🛠️ WebRTC를 활용하여 실시간 양방향 화상 채팅 구현 미시작🕐
+  - 🛠️ WebRTC를 활용하여 실시간 양방향 화상 채팅 구현중⏳
   - 🛠️ IoT 프로젝트를 위한 키오스크 혹은 카드 결제 시스템 구현 미시작🕐
   - 🛠️ 마이데이터 활용을 위한 OAuth2.0 환경 구현 미시작🕐
 - **AWS 과제**: 
+  - 🔄 Docker 컨테이너화 기술을 활용하여 어플리케이션 배포 및 관리 학습중⏳
+  - 🔄 AWS Certified Solutions Architect Associate 자격 취득 학습 중단⛔️
   - 🔄 CI/CD 파이프라인 구축해보기 미시작🕐
-  - 🔄 AWS Certified Solutions Architect Associate 자격 취득 학습중⏳
 - **Frontend 과제**: 
   - 📱 반응형 웹사이트 디자인 및 구현하기 완료✅
