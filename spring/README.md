@@ -91,3 +91,67 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 ## 📝 OAuth 2.0 사용시 주의사항
 - **보안**: 리다이렉션 URI는 가능한 한 정확하게 설정하고 클라이언트 비밀은 안전하게 보관 필요!
 - **범위 관리**: 요청하는 범위(scope)는 최소한으로 유지하며 필요 이상의 접근 권한을 요청 X
+
+# 📜 ApiResponse 클래스 사용 가이드
+
+## 🚀 개요
+`ApiResponse` 클래스는 REST API 응답을 표준화하기 위해 사용되는 유틸리티 클래스입니다. 이 클래스를 사용하면 응답 코드, 메시지, 데이터를 포함하는 일관된 API 응답 형식을 쉽게 생성할 수 있습니다.
+
+## 🛠 클래스 정의
+```java
+@Getter
+@Setter
+public class ApiResponse<T> {
+    private int code;
+    private String message;
+    private T data;
+
+    public ApiResponse(int code, String message, T data) {
+        this.code = code;
+        this.message = message;
+        this.data = data;
+    }
+
+    public static <T> ApiResponse<T> success(String message, T data) {
+        return new ApiResponse<>(200, message, data);
+    }
+    
+    public static <T> ApiResponse<T> error(int code, String message) {
+        return new ApiResponse<>(code, message, null);
+    }
+}
+```
+
+## 📌 사용 예시
+
+### 성공 응답 생성
+
+성공적인 API 요청 결과를 클라이언트에게 전달할 때 사용
+
+```java
+// 자동으로 200 상태 코드를 생성하여 제공!
+ApiResponse<String> response = ApiResponse.success("게시글이 성공적으로 등록되었습니다.", ResponseDto);
+```
+
+### 오류 응답 생성
+
+API 요청 처리 중 발생한 오류를 클라이언트에게 알릴 때 사용
+
+```java
+// 1404 같은 경우 개발자가 커스텀으로 에러 코드를 생성 주로 4~6자리로 구성 추천!
+ApiResponse<Object> errorResponse = ApiResponse.error(1404, "게시글이 존재하지 않습니다!");
+```
+
+## 📝 주요 메서드 설명
+
+- **success 메서드**: 성공적인 처리를 나타내는 ApiResponse 객체를 생성 / HTTP 상태 코드는 기본적으로 200으로 설정 / 이 메서드는 메시지와 데이터를 인자로 받아, 요청이 성공했을 때 클라이언트에 반환할 응답 객체를 생성
+ 
+```java
+ApiResponse<String> response = ApiResponse.success("게시글이 성공적으로 등록되었습니다.", ResponseDto);
+```
+
+- **error 메서드**: 오류가 발생했을 때 사용자 정의 오류 코드와 메시지로 ApiResponse 객체를 생성 / 데이터 필드는 `null`로 설정
+
+```java
+ApiResponse<Object> errorResponse = ApiResponse.error(1404, "게시글이 존재하지 않습니다!");
+```
