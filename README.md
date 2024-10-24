@@ -37,11 +37,14 @@
   - 🛠️ BaseEntity 생성 및 내부 메서드 구현을 통해 softDelete() 구현 완료✅
   - 🛠️ Kafka와 STOMP를 활용한 실시간 1대1 채팅 서비스 구현 완료✅
   - 🛠️ 위 채팅 서비스의 채팅 내역을 MongoDB에 저장 및 관리 기능 구현 완료✅
-  - 🛠️ Custom ResponseEntity 생성 및 Handler 처리 구현 중⏳
+  - 🛠️ Custom ResponseEntity 생성 및 Handler 처리 완료✅
+  - 🛠️ Server Sent Events을 통한 단방향 통신 연습 완료✅
+  - 🛠️ ElasticSearch를 활용한 빠른 키워드 검색 및 유사 단어 추천 기능 구현 중⏳
   - 🛠️ IoT 프로젝트를 위한 키오스크 혹은 카드 결제 시스템 구현 미시작🕐
   - 🛠️ 마이데이터 활용을 위한 OAuth2.0 환경 구현 미시작🕐
 - **AWS 과제**: 
-  - 🔄 Docker 컨테이너화 기술을 활용하여 어플리케이션 배포 및 관리 학습중⏳
+  - 🔄 Docker 컨테이너화 기술을 활용하여 어플리케이션 배포 및 관리 학습완료✅
+  - 🔄 Docker Blue/Green을 활용한 무중단 배포 및 백업 인프라 학습 중⏳
   - 🔄 AWS Certified Solutions Architect Associate 자격 취득 학습 중단⛔️
   - 🔄 CI/CD 파이프라인 구축해보기 미시작🕐
 - **Frontend 과제**: 
